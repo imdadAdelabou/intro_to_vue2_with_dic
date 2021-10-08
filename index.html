@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+
+
+</head>
+
+<body>
+    <div id="app">
+        <form @submit.prevent="onSubmit">
+            <label>Nom:</label>
+            <input v-model="name">
+            <label>Cours:</label>
+            <input v-model="cours">
+            <label>Trimestre:</label>
+            <input type="date" v-model="trimestre">
+            <p><input type="submit" value="Ajouter un étudiant entré"></p>
+        </form>
+        <ul v-for="(item, index) in listsTask" :v-key="index">
+            <todo-item :id="index+1" :name="item.name" :cours="item.cours" :trimestre="item.trimestre"> </todo-item>
+        </ul>
+    </div>
+    <script src="main.js">
+    </script>
+</body>
+
+</html>
